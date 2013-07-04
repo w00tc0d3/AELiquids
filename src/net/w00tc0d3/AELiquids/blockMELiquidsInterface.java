@@ -6,14 +6,18 @@ import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod.Instance;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.gui.Gui;
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.tileentity.TileEntityDispenser;
 import net.minecraft.world.World;
 
 public class blockMELiquidsInterface extends Block {
 	public blockMELiquidsInterface(int par1, Material par2Material) {
 		super(par1, par2Material);
 		this.setHardness(1.5F);
+		this.setCreativeTab(CreativeTabs.tabMisc);
 	}
 	
 	public void registerIcons(IconRegister iconRegister) {
@@ -25,6 +29,7 @@ public class blockMELiquidsInterface extends Block {
 			return true;
 		} else {
 			openGUI();
+			//new Gui();
 			return true;
 		}
 	}
